@@ -18,17 +18,17 @@ const handler = createRouter();
 handler.use(cors(corsOptions));
 
 handler.post(async (req, res) => {
-    const newData = req.body;
+  const newData = req.body;
 
-    // Save data to the file
-    fs.writeFile(DATA_FILE_PATH, JSON.stringify(newData))
-        .then(() => {
-            res.status(200).json({data: newData});
-        })
-        .catch((error) => {
-            console.error('Error saving data:', error);
-            res.status(500).json({error: 'Internal Server Error'});
-        });
+  // Save data to the file
+  fs.writeFile(DATA_FILE_PATH, JSON.stringify(newData))
+    .then(() => {
+      res.redirect(302, '/2048');
+    })
+    .catch((error) => {
+      console.error('Error saving data:', error);
+      res.status(500).json({error: 'Internal Server Error'});
+    });
 });
 
 handler.get(async (req, res) => {
