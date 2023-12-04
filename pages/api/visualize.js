@@ -23,7 +23,7 @@ handler.post(async (req, res) => {
   // Save data to the file
   fs.writeFile(DATA_FILE_PATH, JSON.stringify(newData))
     .then(() => {
-      res.redirect(302, '/2048');
+      res.status(200).json({url: '/2048'});
     })
     .catch((error) => {
       console.error('Error saving data:', error);
