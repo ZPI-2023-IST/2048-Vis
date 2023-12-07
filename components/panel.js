@@ -43,7 +43,9 @@ const GamePanel = ({ boardStates }) => {
 
   return (
     <div className={styles.gamePanel}>
-      <Board2048 board={boardStates[currentMoveIndex]} />
+      <Board2048
+        board={boardStates[currentMoveIndex]}
+      />
 
       <div className={styles.controls}>
         <button onClick={() => handleMove('backward')} disabled={currentMoveIndex === 0}>

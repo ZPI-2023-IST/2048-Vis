@@ -1,18 +1,27 @@
 /* styles/Board2048.module.css */
+
 .board2048 {
-    max-width: 400px;
+    box-sizing: border-box;
     margin: 0 auto;
+    flex-grow: 1;
+    /* background-color: #f65e3b; */
+    aspect-ratio: 1/1;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    gap: 0.2rem;
+    padding: 0.5rem;
   }
   
   .row {
     display: flex;
+    gap: 0.2rem;
+
     justify-content: space-between;
-    margin-bottom: 8px; /* Add margin to separate rows */
   }
   
   .tile {
-    width: 80px;
-    height: 80px;
+    aspect-ratio: 1/1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,6 +29,8 @@
     font-weight: bold;
     border-radius: 8px;
     background-color: #ccc;
+    width: 100%;
+    font-size: clamp(1rem, 2.5vw, 5rem);
   }
   
   .tile-2 {
